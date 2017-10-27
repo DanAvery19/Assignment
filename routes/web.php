@@ -15,22 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/wad2', function () {
-    return view('WAD2_Project');
-}); 
+Auth::routes();
 
-Route::get('/add', 'StudentController@index');
+Route::get('/home', 'HomeController@index');
 
-Route::post('add', 'StudentController@add');
-
-Route::get('assign', 'StudentController@view');
-
-Route::get('edit/{id}', 'StudentController@edit');
-
-Route::post('update', 'StudentController@update');
-
-Route::get('delete/{id}', 'StudentController@delete');
-
-Route::get('/success', function () {
-    return view('Success');
-}); 
+Route::get('/cart/{id}', 'HomeController@cart');
